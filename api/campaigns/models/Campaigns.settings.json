@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "campaigns",
+  "info": {
+    "name": "campaigns",
+    "description": "A coupoon campaign by a Suggestic partner."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "slug": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}
